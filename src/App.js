@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import socket from "./utilities/socketConnection";
 import {Component} from "react";

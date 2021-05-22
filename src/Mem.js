@@ -3,7 +3,7 @@ import drawCircle from "./utilities/canvasLoadAnimation";
 
 class Mem extends Component {
     render() {
-        const {memusage, usedmem, totalmem, freemem} = this.props.memData
+        const {memusage, totalmem, freemem} = this.props.memData
 
         const canvas = document.querySelector(`.${this.props.memData.memWidgetId}`)
 
