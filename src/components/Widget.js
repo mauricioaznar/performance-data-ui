@@ -3,6 +3,7 @@ import Cpu from './Cpu'
 import Mem from './Mem'
 import Info from './Info'
 import './widget.css'
+import {Container, Flex, Spacer} from "@chakra-ui/react";
 
 class Widget extends Component {
     constructor(props) {
@@ -38,12 +39,16 @@ class Widget extends Component {
 
 
         return (
-            <div className="widget col-sm-12">
-                { notActiveDiv }
-                <Cpu cpuData = {cpu} />
-                <Mem memData = {mem} />
-                <Info infoData = {info} />
-            </div>
+            <Container maxW="container.lg">
+                <Flex w={'100%'}>
+                    { notActiveDiv }
+                    <Cpu cpuData = {cpu} />
+                    <Spacer />
+                    <Mem memData = {mem} />
+                    <Spacer />
+                    <Info infoData = {info} />
+                </Flex>
+            </Container>
         );
     }
 }

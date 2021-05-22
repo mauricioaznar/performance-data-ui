@@ -1,0 +1,7 @@
+.not-active{
+    font-family: 'Montserrat Subrayada', sans-serif;
+    color: #8b0000;
+    font-size: 100px;
+    position: absolute;
+    z-index: 2;
+}
