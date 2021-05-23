@@ -24,13 +24,19 @@ class Widget extends Component {
             numCores,
             cpuLoad,
             macA,
-            isActive
+            isActive,
+            pm2List,
+            diskusage,
+            diskfree,
+            diskused,
+            disktotal
         } = this.props.data
+
         const cpuWidgetId = `cpu-widget-${macA}`
         const memWidgetId = `mem-widget-${macA}`
         const cpu = { cpuLoad, cpuWidgetId }
         const mem = {memusage, usedmem, totalmem, freemem, memWidgetId}
-        const info = {macA, osType, upTime, cpuModel, cpuSpeed, numCores}
+        const info = {macA, osType, upTime, cpuModel, cpuSpeed, numCores, pm2List, diskusage, diskfree, diskused, disktotal}
 
         let notActiveDiv = ''
         if (!isActive) {
@@ -40,7 +46,7 @@ class Widget extends Component {
 
         return (
             <Container maxW="container.lg">
-                <Flex w={'100%'}>
+                <Flex w={'100%'} align={'center'}>
                     { notActiveDiv }
                     <Cpu cpuData = {cpu} />
                     <Spacer />
