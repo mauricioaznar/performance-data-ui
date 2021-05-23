@@ -3,7 +3,7 @@ import Cpu from './Cpu'
 import Mem from './Mem'
 import Info from './Info'
 import './widget.css'
-import {Box, Circle, Container, Flex, Heading, Text} from "@chakra-ui/react";
+import {Circle, Container, Flex, Heading} from "@chakra-ui/react";
 
 class Widget extends Component {
     constructor(props) {
