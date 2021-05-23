@@ -3,7 +3,7 @@ import Cpu from './Cpu'
 import Mem from './Mem'
 import Info from './Info'
 import './widget.css'
-import {Container, Flex, Spacer} from "@chakra-ui/react";
+import {Box, Circle, Container, Flex, Heading, Text} from "@chakra-ui/react";
 
 class Widget extends Component {
     constructor(props) {
@@ -29,7 +29,8 @@ class Widget extends Component {
             diskusage,
             diskfree,
             diskused,
-            disktotal
+            disktotal,
+            hostname
         } = this.props.data
 
         const cpuWidgetId = `cpu-widget-${macA}`
@@ -46,12 +47,18 @@ class Widget extends Component {
 
         return (
             <Container maxW="container.lg">
-                <Flex w={'100%'} align={'center'}>
+                <Flex position={'relative'} w={'100%'} align={'center'} justify={'space-between'} alignItems={'strech'}>
                     { notActiveDiv }
-                    <Cpu cpuData = {cpu} />
-                    <Spacer />
-                    <Mem memData = {mem} />
-                    <Spacer />
+                    <Flex flexGrow={1} direction={'column'} justify={'space-between'}>
+                        <Flex align={'center'}>
+                            <Circle size="40px" bg={isActive ? 'green' : 'red'} border={'2px solid black'} />
+                            <Heading flexGrow={1} size={'lg'} w={'100%'} textAlign={'center'}>{hostname}</Heading>
+                        </Flex>
+                        <Flex w={'100%'} justify={'space-around'} flexGrow={1} align={'center'}>
+                            <Cpu cpuData = {cpu} />
+                            <Mem memData = {mem} />
+                        </Flex>
+                    </Flex>
                     <Info infoData = {info} />
                 </Flex>
             </Container>

@@ -43,7 +43,7 @@ class App extends Component {
         })
 
         return (
-            <Stack align={'center'} spacing={20}>
+            <Stack align={'center'} spacing={20} paddingY={20}>
                 <Text width={'100%'} textAlign={'center'} fontSize="4xl">Performance data from personal machines</Text>
                 {widgets}
             </Stack>

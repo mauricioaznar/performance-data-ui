@@ -21,14 +21,14 @@ function Info(props){
             <div>PM2 applications</div>
             <List>
                 {
-                    pm2List.map(nodeApp => {
+                    pm2List.map(pm2App => {
                         return (
-                            <ListItem key={nodeApp.pm_id}>
+                            <ListItem key={pm2App.pm_id}>
                                 <ListIcon
-                                    as={nodeApp.pm2_env.status === 'online' ? CheckIcon : CloseIcon}
-                                    color={nodeApp.pm2_env.status === 'online' ? 'green' : 'red'}
+                                    as={pm2App.status === 'online' ? CheckIcon : CloseIcon}
+                                    color={pm2App.status === 'online' ? 'green' : 'red'}
                                 />
-                                {nodeApp.name}
+                                {pm2App.name}
                             </ListItem>
 
                         )
