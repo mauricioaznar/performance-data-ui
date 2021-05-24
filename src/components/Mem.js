@@ -20,12 +20,12 @@ class Mem extends Component {
         }
 
 
-        const totalMemInGb = (Math.floor(totalmem * 100 / 1024)) / 100
-        const freeMemInGb = (Math.floor(freemem * 100 / 1024)) / 100
+        const totalMemInGb = totalmem
+        const freeMemInGb = freemem
 
         return (
             <Box position={'relative'}>
-                <CircularProgress value={memusage} size="300px" color={color} />
+                <CircularProgress value={memusage > 0 ? memusage : 0} size="300px" color={color} />
                 <Stat w={'100%'} position={'absolute'} top={'50%'}  transform={'translateY(-50%)'} size={'lg'}>
                     <StatLabel textAlign={'center'}>Mem usage</StatLabel>
                     <StatNumber textAlign={'center'}>{memusage}%</StatNumber>

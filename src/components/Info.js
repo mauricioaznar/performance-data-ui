@@ -4,14 +4,14 @@ import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import moment from 'moment'
 
 function Info(props){
-
-    const pm2List = props.infoData.pm2List || []
+        const pm2List = props.infoData.pm2List || []
+        const upTime = props.infoData.upTime > 0 ? moment().subtract(props.infoData.upTime, 'seconds').fromNow() : '-'
 
     return (
         <Stack width={'300px'} justify={'center'} spacing={4}>
             <div><strong>Operating System:</strong> {props.infoData.osType}</div>
             <Divider />
-            <div><strong>Time Online:</strong> {moment().subtract(props.infoData.upTime, 'seconds').fromNow()}</div>
+            <div><strong>Time Online:</strong> {upTime}</div>
             <Divider />
             <div>Processor information</div>
             <div><strong>Type:</strong> {props.infoData.cpuModel}</div>
