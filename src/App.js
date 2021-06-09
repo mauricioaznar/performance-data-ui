@@ -1,7 +1,7 @@
 import socket from "./utilities/socketConnection";
 import {Component} from "react";
 import Widget from "./components/Widget";
-import {FormControl, FormLabel, Stack, Switch, Text} from "@chakra-ui/react";
+import {Stack, Switch, Text} from "@chakra-ui/react";
 
 class App extends Component {
     constructor(props) {
