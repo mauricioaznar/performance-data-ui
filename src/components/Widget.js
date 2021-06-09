@@ -25,7 +25,6 @@ class Widget extends Component {
             cpuLoad,
             macA,
             isActive,
-            pm2List,
             diskusage,
             diskfree,
             diskused,
@@ -37,7 +36,7 @@ class Widget extends Component {
         const memWidgetId = `mem-widget-${macA}`
         const cpu = { cpuLoad, cpuWidgetId }
         const mem = {memusage, usedmem, totalmem, freemem, memWidgetId}
-        const info = {macA, osType, upTime, cpuModel, cpuSpeed, numCores, pm2List, diskusage, diskfree, diskused, disktotal}
+        const info = {macA, osType, upTime, cpuModel, cpuSpeed, numCores, diskusage, diskfree, diskused, disktotal}
 
         let notActiveDiv = ''
         if (!isActive) {
