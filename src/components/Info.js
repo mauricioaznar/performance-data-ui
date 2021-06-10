@@ -42,7 +42,7 @@ function Info(props) {
             <div><strong>Usage</strong> {diskUsage} </div>
             <div><strong>Disk total:</strong> {disktotal}</div>
             <div><strong>Disk free:</strong> {diskfree} </div>
-            <div><strong>Disk used:</strong> {diskused} </div>
+            {/*<div><strong>Disk used:</strong> {diskused} </div>*/}
         </Stack>
     );
 }

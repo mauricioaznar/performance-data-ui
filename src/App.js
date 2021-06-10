@@ -1,7 +1,7 @@
 import socket from "./utilities/socketConnection";
 import {Component} from "react";
 import Widget from "./components/Widget";
-import {Stack, Switch, Text} from "@chakra-ui/react";
+import {Divider, Stack, Switch, Text} from "@chakra-ui/react";
 
 class App extends Component {
     constructor(props) {
@@ -48,22 +48,25 @@ class App extends Component {
                 return this.state.showOffline || value.isActive
             })
             .forEach(([key, value]) => {
+                widgets.push(<Divider key={key + '_divider'} orientation="horizontal" />)
                 widgets.push(<Widget key={key} data={value}/>)
             })
 
         return (
-            <Stack align={'center'} spacing={20} paddingY={20}>
-                <Text width={'100%'} textAlign={'center'} fontSize="4xl">Performance data from personal machines</Text>
-                <Stack direction="row">
-                    <Text fontSize="2xl">
-                        Show offline machines?
-                    </Text>
-                    <Switch id="filter-offline" size="lg" onChange={() => {
-                        console.log(this.state.showOffline)
-                        this.setState({
-                            showOffline: !this.state.showOffline
-                        })
-                    }} value={this.state.showOffline}/>
+            <Stack align={'center'} paddingY={20} spacing={20}>
+                <Stack direction="row" marginTop={0} align={'center'} spacing={20}>
+                    <Text fontSize="4xl">Performance data from personal machines</Text>
+                    <Stack direction={'column'} align={'center'}>
+                        <Text fontSize="2xl">
+                            Show offline machines?
+                        </Text>
+                        <Switch id="filter-offline" size="lg" onChange={() => {
+                            console.log(this.state.showOffline)
+                            this.setState({
+                                showOffline: !this.state.showOffline
+                            })
+                        }} value={this.state.showOffline}/>
+                    </Stack>
                 </Stack>
                 {widgets}
             </Stack>
