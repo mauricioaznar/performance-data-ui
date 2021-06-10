@@ -7,7 +7,7 @@ function Info(props) {
     const diskUsage = props.infoData.diskusage !== '-' ? props.infoData.diskusage + '%' : '-'
     const disktotal = props.infoData.disktotal !== '-' ? props.infoData.disktotal + ' GB' : '-'
     const diskfree = props.infoData.diskfree !== '-' ? props.infoData.diskfree + ' GB' : '-'
-    const diskused = props.infoData.diskused !== '-' ? props.infoData.diskused + ' GB' : '-'
+    // const diskused = props.infoData.diskused !== '-' ? props.infoData.diskused + ' GB' : '-'
 
     return (
         <Stack width={'300px'} justify={'center'} spacing={4}>
