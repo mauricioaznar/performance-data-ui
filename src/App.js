@@ -12,6 +12,8 @@ class App extends Component {
     }
 
     componentDidMount() {
+        socket.emit('clientAuth', 'asdfasd')
+
         socket.on('data', (data) => {
             // inside this callback we just gome some new data!
             // lets update state so we can re-render app --> widget --> cpu
@@ -27,6 +29,14 @@ class App extends Component {
             this.setState({
                 performanceData: currentState
             })
+        })
+
+        socket.on('error', (data) => {
+            console.log(data)
+        })
+
+        socket.on('reconnect', (data) => {
+            socket.emit('clientAuth', 'asdfasd')
         })
     }
 
