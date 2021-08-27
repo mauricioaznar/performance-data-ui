@@ -24,7 +24,7 @@ class Cpu extends Component {
 
         return (
             <Box position={'relative'}>
-                <CircularProgress value={cpuLoad} size="300px" color={color} />
+                <CircularProgress value={cpuLoad > 0 ? cpuLoad : 0} size="300px" color={color} />
                 <Stat w={'100%'} position={'absolute'} top={'50%'}  transform={'translateY(-50%)'} size={'lg'}>
                     <StatLabel textAlign={'center'}>CPU load</StatLabel>
                     <StatNumber textAlign={'center'}>{this.props.cpuData.cpuLoad}%</StatNumber>
